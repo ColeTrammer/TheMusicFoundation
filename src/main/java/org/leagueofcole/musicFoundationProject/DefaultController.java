@@ -16,12 +16,13 @@ public class DefaultController {
 
 	@Autowired
 	LessonService lessonService;
-	
+
 	@Autowired
 	RoomService roomService;
-	
+
 	@Autowired
 	TeacherService teacherService;
+<<<<<<< HEAD
 	
 	@GetMapping(path = "/login")
 	public String login() {
@@ -33,6 +34,14 @@ public class DefaultController {
 		return "register";
 	}
 	
+=======
+
+//	@GetMapping(path = "/login")
+//	public String login() {
+//		return "login";
+//	}
+
+>>>>>>> LeaguePelicans/master
 	@GetMapping(path = "/lessons")
 	public String calendar(Model model) {
 		model.addAttribute("lessons", lessonService.all());
@@ -41,13 +50,23 @@ public class DefaultController {
 
 	@GetMapping(path = "/")
 	public String homepage() {
+//		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+//		try {
+//			String json = ow.writeValueAsString(new Teacher("Emp palp", "rebel scum"));
+//			System.out.println(json);
+//		} catch (JsonProcessingException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		return "homepage";
 	}
+
 	@GetMapping(path = "/lessons/view/{id}")
 	public String view(@PathVariable Long id, Model model) {
-		model.addAttribute("lesson", lessonService.findById(id));
+		model.addAttribute("lesson", lessonService.findByTeacherID(id));
 		return "view";
 	}
+
 	@GetMapping(path = "/lessons/new")
 	public String _new(Model model) {
 		model.addAttribute("rooms", roomService.all());

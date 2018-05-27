@@ -28,10 +28,17 @@ public class DataLoader {
 	@PostConstruct
 	private void loadData() {
 		//lessonRepo.save(new Lesson(new Teacher("Ian","12345"), new Date(), new Time()));
+<<<<<<< HEAD
 		//Room a = new Room("A", "General");
 		//roomRepo.save(a);
 		//Teacher t = new Teacher("wow", "pwd");
 		//teacherRepo.save(t);
+=======
+//		Room a = new Room("A", "General");
+//		roomRepo.save(a);
+//		Teacher t = new Teacher("wow", "pwd");
+//		teacherRepo.save(t);
+>>>>>>> LeaguePelicans/master
 		//lessonRepo.save(new Lesson(t, new Date(), new Time(new Date().getTime()), new Time(new Date().getTime() + (1000 * 60 * 30)), a, 1));
 	}
 }
